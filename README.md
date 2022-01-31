@@ -2,6 +2,8 @@
 
 This mod adds a HUD to the space rig to show more information at a glance.
 
+![Preview](preview.jpg)
+
 ## Build Instructions
 
 1. Install `Unreal Engine 4.25.4`
