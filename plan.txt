@@ -1,42 +1,14 @@
-MISSION HILITE FEATURE:
+TODO LIST:
 
-run once on rig load, with just a few seconds of wait for the fade in
-read all UGeneratedMission from the game state
-filter the list of missions by hilite criteria (just double XP or all yellows?)
---need to detect URewardMutator ?
-show results in grouped lists
-where possible, reuse the official icons, which should even play nice with other mods
+add a visible timer for the mission rotation countdown
 
-example:
--double XP (icon)
---mission type (icon)
---UBiome (ftext)
---complexity, duration, secondary obj (icons)
---mission name (totally random, but fun to see)
---mutators and warnings (each mission might have multiple of each, though we will know one of them is double XP which can be omitted)
-
-
-later: rerun this when missions rotate (for testing, try to run "regenerate missions" on a separate short timer)
+reset the view when missions rotate
    UFSDGameInstance::GetGlobalMissionSeed()
    UFSDGameInstance::UpdateGlobelMissionSeed()
-later: also add a visible timer for the mission rotation countdown
 
-hard: add highlights to the biomes and missions for the hilited criteria
+show current beer, also with rotation timer
 
-later: instead of a simple grouping, find the "best top 3 missions" by some weighting
--near the top would be double XP, mineral mania, and double warnings
-later: UMissionGenerationManager might be able to generate test missions consistently.
+show length/complexity, or is this not necessary and will just add clutter?
 
-
-BEER FEATURE:
--show current beer at the top
--add a timer to show the beer rotation
--update the beer when it rotates
-
-
-------------------------------
-WIP:
-TODO: length/complexity
-TODO: mission scoring and sorting
-TODO: beer feature
-TODO: recycle when mission timer elapses
+set up true weighting/sorting for the "best missions"
+   UMissionGenerationManager might be able to generate test missions
