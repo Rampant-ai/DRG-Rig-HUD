@@ -1,0 +1,6 @@
+*.lnk
+*.pak
+input.txt
+input/*
+WindowsNoEditor/*
+unpacked/
