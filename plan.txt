@@ -1,14 +1,68 @@
 TODO LIST:
 
+TIMERS:
+missions --> every 30 minutes on the hour/half
+mineral deals --> daily, midnight UTC
+daily beer --> same as mineral timer?
+
+--------
+MISSIONS
+--------
 add a visible timer for the mission rotation countdown
 
 reset the view when missions rotate
    UFSDGameInstance::GetGlobalMissionSeed()
    UFSDGameInstance::UpdateGlobelMissionSeed()
 
-show current beer, also with rotation timer
-
-show length/complexity, or is this not necessary and will just add clutter?
+show mission length/complexity, or is this not necessary and will just add clutter?
 
 set up true weighting/sorting for the "best missions"
+   consider anomalies/warnings, assignments (active or not), challenges
    UMissionGenerationManager might be able to generate test missions
+
+
+-----
+BEERS
+-----
+show current beer, also with rotation timer
+
+   struct ASpaceRigBar
+      FMulticastInlineDelegate OnNewDrinkableSpecial;
+      UDrinkableDataAsset* DrinkableSpecial;
+
+   struct UGameData
+      UDrinkSettings* DrinkSettings;
+
+   struct UDrinkSettings
+      UDrinkableDataAsset* GetBarDailySpecial(UObject* WorldContext);
+
+   struct UDrinkableDataAsset
+      FText DrinkableName;
+      TSoftObjectPtr<UTexture2D> DrinkableIcon;
+
+
+----------
+DAILY DEAL
+----------
+show current "daily deal" for resources, with rotation timer, but hide if already purchased
+
+	struct UGameData
+		UDailyDealSettings* DailyDealSettings;
+		
+	struct UDailyDealSettings
+		TArray<FDailyDealSetup> DailyDeals;
+		bool IsDailyDealBought(UObject* WorldContextObject);
+		void GetDailyDeal(FDailyDeal outDeal);
+
+	struct FDailyDealSetup
+		UResourceData* Resource;
+		enum class EDealType DealType;
+		
+	struct UResourceData
+		FText Title;
+		FColor Color;
+		UTexture2D* Icon;
+
+	enum class EDealType
+		Buy = 0,
+		Sell = 1,
