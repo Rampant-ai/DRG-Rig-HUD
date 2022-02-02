@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "GeneratedMission.h"
+#include "HUDVisibilityGroup.h"
 #include "GameData.generated.h"
 
 // ------------------------------------------------------------------------------------------------
@@ -74,8 +75,8 @@ class UDailyDealSettings : public UDataAsset
 public:
 	UPROPERTY(BlueprintReadOnly) TArray<FDailyDealSetup> DailyDeals;
 
-	bool IsDailyDealBought(UObject* WorldContextObject) { return true; };
-	void GetDailyDeal(FDailyDeal outDeal) {};
+	UFUNCTION(BlueprintCallable) bool IsDailyDealBought(UObject* WorldContextObject) { return true; };
+	UFUNCTION(BlueprintCallable) void GetDailyDeal(FDailyDeal outDeal) {};
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -92,4 +93,7 @@ public:
 
 	// Mineral Trade Terminal's "Daily Deal"
 	UPROPERTY(BlueprintReadOnly) UDailyDealSettings* DailyDealSettings;
+
+	// Visibility groups are groups of widgets for display in the HUD
+	UFUNCTION(BlueprintCallable) TArray<UHUDVisibilityGroup*> GetAllVisibilityGroups() { return *new TArray<UHUDVisibilityGroup*>(); };
 };
