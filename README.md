@@ -2,7 +2,20 @@
 
 This mod adds a HUD to the space rig to show more information at a glance.
 
+It is released as [rancor's Rig HUD](https://drg.mod.io/rancors-rig-hud/) on [mod.io](https://mod.io/).
+
 ![Preview](preview.jpg)
+
+## Technical Overview
+
+This section describes the components of this mod and how they fit together. The prefix "RH_" is short for "RigHUD" to clarify which blueprints are specifically for this mod.
+
+* `InitSpacerig` - The mod's native entrypoint. Start here to see where we branch out to other blueprints.
+* `RH_MissionDataCollector` - Collects mission data via other blueprints and creates, configures, and displays UI widgets.
+* `RH_Logger` - Widget for displaying debugging information. Should be disabled (unhooked) for official builds.
+* `RH_HUD` - The main widget for laying out the HUD additions. Additional widgets are created and added dynamically.
+* `RH_MissionView` - Widget displaying a "row" of mission information. Most components are variables configured dynamically in blueprints.
+* All other blueprints and C++ code are dummies for existing DRG assets and DRG code. They exist solely for mod assets to refer to at the build/compile/package phase, but are replaced by the actual assets/code at runtime. Refer to the guides below for more details.
 
 ## Build Instructions
 
@@ -25,17 +38,6 @@ This mod adds a HUD to the space rig to show more information at a glance.
 1. Launch DRG and enable the mod in your Mods menu.
 1. _(Optional)_ Run [`Package\clean.bat`](https://github.com/Rampant-ai/DRG-Rig-HUD/blob/main/FSD/Package/clean.bat) to remove all files generated from the above steps. This runs much faster than using the mouse, and can save lots of disk space.
 1. _(Optional)_ Copy DRG's main pak file from `Steam\steamapps\common\Deep Rock Galactic\FSD\Content\Paks\FSD-WindowsNoEditor.pak` into the `Package\` directory, then drag the newly copied file onto [`unpack.bat`](https://github.com/Rampant-ai/DRG-Rig-HUD/blob/main/FSD/Package/unpack.bat) to unpack all of its assets. This can help verify how assets are organized if you need to override or dummy them for your mod.
-
-## Technical Overview
-
-This section describes the components of this mod and how they fit together. The prefix "RH_" is short for "RigHUD" to clarify which blueprints are specifically for this mod.
-
-* `InitSpacerig` - The mod's native entrypoint. Start here to see where we branch out to other blueprints.
-* `RH_MissionDataCollector` - Collects mission data via other blueprints and creates, configures, and displays UI widgets.
-* `RH_Logger` - Widget for displaying debugging information. Should be disabled (unhooked) for official builds.
-* `RH_HUD` - The main widget for laying out the HUD additions. Additional widgets are created and added dynamically.
-* `RH_MissionView` - Widget displaying a "row" of mission information. Most components are variables configured dynamically in blueprints.
-* All other blueprints and C++ code are dummies for existing DRG assets and DRG code. They exist solely for mod assets to refer to at the build/compile/package phase, but are replaced by the actual assets/code at runtime. Refer to the guides below for more details.
 
 ## Learning Recommendations
 
