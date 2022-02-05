@@ -15,4 +15,3 @@ XCOPY %SRCDIR%\AssetRegistry.bin %PACKDIR%\
 XCOPY /S %SRCDIR%\Content\RigHUD\* %PACKDIR%\Content\RigHUD\*
 
 ECHO.
-PAUSE
