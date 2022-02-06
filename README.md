@@ -12,9 +12,11 @@ This section describes the components of this mod and how they fit together. The
 
 * `InitSpacerig` - The mod's native entrypoint. Start here to see where we branch out to other blueprints.
 * `RH_MissionDataCollector` - Collects mission data via other blueprints and creates, configures, and displays UI widgets.
-* `RH_Logger` - Widget for displaying debugging information. Should be disabled (unhooked) for official builds.
 * `RH_HUD` - The main widget for laying out the HUD additions. Additional widgets are created and added dynamically.
-* `RH_MissionView` - Widget displaying a "row" of mission information. Most components are variables configured dynamically in blueprints.
+* `RH_StatusBar` - Widget row for displaying the status bar at the top, including the rotation countdown timer.
+* `RH_BeerView` - Widget row for displaying the current beer special.
+* `RH_MissionView` - Widget row for displaying mission information.
+* `RH_Logger` - Widget for displaying debugging information. Unhooked for official builds.
 * All other blueprints and C++ code are dummies for existing DRG assets and DRG code. They exist solely for mod assets to refer to at the build/compile/package phase, but are replaced by the actual assets/code at runtime. Refer to the guides below for more details.
 
 ## Build Instructions

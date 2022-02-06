@@ -164,8 +164,8 @@ public:
 	//UPROPERTY(BlueprintReadOnly) TSoftObjectPtr<ULevelSequence> LoaderLevelSequence;
 	*/
 
-	UFUNCTION(BlueprintCallable) FObjectiveMissionIcon GetSecondaryObjectiveIcon() { return *new FObjectiveMissionIcon(); };
-	UFUNCTION(BlueprintCallable) TArray<UMutator*> GetMutators(UMutator* mutatorClass) { return *new TArray<UMutator*>(); };
+	UFUNCTION(BlueprintCallable) FObjectiveMissionIcon GetSecondaryObjectiveIcon() { return FObjectiveMissionIcon(); };
+	UFUNCTION(BlueprintCallable) TArray<UMutator*> GetMutators(UMutator* mutatorClass) { return TArray<UMutator*>(); };
 	
 	/*
 	//UFUNCTION(BlueprintCallable) void Recieve_SetupPLS(AProceduralSetup* pls);

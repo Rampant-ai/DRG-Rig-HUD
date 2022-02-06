@@ -15,4 +15,3 @@ ECHO --- Installing Mod...
 XCOPY /S RigHUD\ "%DRG_MODS%\RigHUD\"
 
 ECHO.
-PAUSE

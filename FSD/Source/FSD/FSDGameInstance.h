@@ -10,8 +10,6 @@ UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class UFSDGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
-
 public:
-	
 	UFUNCTION(BlueprintCallable) AFSDPlayerController* GetLocalFSDPlayerController() { return NULL; };
 };

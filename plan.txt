@@ -1,14 +1,5 @@
 TODO LIST:
 
-fix overlapping UI issues
-   viewport traversal/searching?
-   clever events in UFSDGameInstance?
-		FMulticastInlineDelegate OnShowCharacterSelector;
-		FMulticastInlineDelegate OnShowViewer3D;
-		FMulticastInlineDelegate OnShowCharacterSelectorEquipSlot;
-		FMulticastInlineDelegate OnShowCharacterSelectorEquip;
-		FMulticastInlineDelegate OnShowCharacterSelectorRotate;
-
 --------
 MISSIONS
 --------
@@ -17,9 +8,7 @@ show mission length/complexity
 
 add white marker icon for "active assignment mission"
 
-set up true weighting/sorting for the "best missions"
-   consider anomalies/warnings, assignments (active or not), challenges
-   UMissionGenerationManager might be able to generate test missions
+is there a thicker mission "hex outline" icon?
 
 ----------
 DAILY DEAL

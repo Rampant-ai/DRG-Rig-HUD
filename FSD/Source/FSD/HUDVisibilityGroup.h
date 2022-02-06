@@ -4,9 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-//#include "Components/Widget.h"
 //#include "Components/SlateWrapperTypes.h"
 #include "HUDVisibilityGroup.generated.h"
+
+class UWidget;
+//enum ESlateVisibility;
 
 UENUM(BlueprintType)
 enum class EHUDVisibilityMode : uint8
@@ -52,8 +54,8 @@ USTRUCT(BlueprintType)
 struct FHUDVisibilityRegisteredWidget
 {
 	GENERATED_BODY()
-
-	//TWeakObjectPtr<UWidget> Widget;
+public:
+	//UPROPERTY(BlueprintReadOnly) TWeakObjectPtr<UWidget> Widget;
 };
 
 
@@ -70,7 +72,7 @@ public:
 	UPROPERTY(BlueprintReadOnly) bool AllowDynamicMode;
 	UPROPERTY(BlueprintReadOnly) bool AllowHiddenMode;
 	UPROPERTY(BlueprintReadOnly) bool bDynamicallyVisible;
-	//UPROPERTY(BlueprintReadOnly) TArray<FHUDVisibilityRegisteredWidget> RegisteredWidgets;
+	UPROPERTY(BlueprintReadOnly) TArray<FHUDVisibilityRegisteredWidget> RegisteredWidgets;
 	UPROPERTY(BlueprintReadOnly) EHUDVisibilityMode RecommendedMode;
 	UPROPERTY(BlueprintReadOnly) EHUDVisibilityMode MinimalMode;
 
@@ -80,9 +82,9 @@ public:
 	UFUNCTION(BlueprintCallable) void SetHudGroupDynamicallyVisible(UHUDVisibilityGroup* Group, bool IsVisible) {};
 	UFUNCTION(BlueprintCallable) void SetGroupDynamicallyVisible(bool IsVisible) {};
 
-	// looks like UWidget and ESlateVisibility become unresolved external symbols if we tag these as UFUNCTIONs.
-	//void RegisterWidgetWithVisibilityGroup(UWidget* Widget, UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode) {};
-	//void RegisterMultipleWidgetsWithVisibilityGroup(TArray<UWidget*> Widgets, UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode) {};
+	// These yield "unresolved external symbol" errors when tagged with UFUNCTION, due to "UWidget" and "ESlateVisibility".
+	//UFUNCTION(BlueprintCallable) static void RegisterWidgetWithVisibilityGroup(UWidget* Widget, UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode) {};
+	//UFUNCTION(BlueprintCallable) static void RegisterMultipleWidgetsWithVisibilityGroup(TArray<UWidget*> Widgets, UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode) {};
 
 	UFUNCTION(BlueprintCallable) void ModeDelegate__DelegateSignature(UHUDVisibilityGroup* Group, EHUDVisibilityMode Mode) {};
 	UFUNCTION(BlueprintCallable) bool IsModeAllowed(EHUDVisibilityMode InMode) { return false; };
@@ -90,5 +92,5 @@ public:
 	UFUNCTION(BlueprintCallable) bool IsHudGroupVisible(UHUDVisibilityGroup* Group) { return false; };
 	UFUNCTION(BlueprintCallable) bool IsGroupVisible() { return false; };
 	UFUNCTION(BlueprintCallable) EHUDVisibilityMode GetMode() { return EHUDVisibilityMode::Visible; };
-	//UFUNCTION(BlueprintCallable) TArray<EHUDVisibilityMode> GetAllowedModes();
+	UFUNCTION(BlueprintCallable) TArray<EHUDVisibilityMode> GetAllowedModes() { return TArray<EHUDVisibilityMode>(); };
 };

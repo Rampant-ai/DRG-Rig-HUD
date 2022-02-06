@@ -98,5 +98,5 @@ public:
 	UPROPERTY(BlueprintReadOnly) UDailyDealSettings* DailyDealSettings;
 
 	// Visibility groups are groups of widgets for display in the HUD
-	UFUNCTION(BlueprintCallable) TArray<UHUDVisibilityGroup*> GetAllVisibilityGroups() { return *new TArray<UHUDVisibilityGroup*>(); };
+	UFUNCTION(BlueprintCallable) TArray<UHUDVisibilityGroup*> GetAllVisibilityGroups() { return TArray<UHUDVisibilityGroup*>(); };
 };
