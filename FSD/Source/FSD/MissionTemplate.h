@@ -13,7 +13,10 @@ class FSD_API UMissionTemplate : public UDataAsset
 
 public:
 
+	UPROPERTY(BlueprintReadOnly) TSoftObjectPtr<UTexture2D> MissionImageLarge;
+	UPROPERTY(BlueprintReadOnly) TSoftObjectPtr<UTexture2D> MissionButtonImage;
 	UPROPERTY(BlueprintReadOnly) UTexture2D* MissionIcon;
 	UPROPERTY(BlueprintReadOnly) UTexture2D* MissionIconSmall;
+	UPROPERTY(BlueprintReadOnly) FLinearColor MissionColor;
 	UPROPERTY(BlueprintReadOnly) int32 MissionTypeIndex;
 };
