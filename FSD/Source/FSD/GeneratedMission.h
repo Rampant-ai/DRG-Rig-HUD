@@ -138,6 +138,16 @@ public:
 
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class UMissionDNA : public UObject
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(BlueprintReadOnly) UMissionComplexity* Complexity;
+	UPROPERTY(BlueprintReadOnly) UMissionDuration* Duration;
+};
+
+
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class FSD_API UGeneratedMission : public UObject
 {
 	GENERATED_BODY()
@@ -167,15 +177,13 @@ public:
 	UFUNCTION(BlueprintCallable) FObjectiveMissionIcon GetSecondaryObjectiveIcon() { return FObjectiveMissionIcon(); };
 	UFUNCTION(BlueprintCallable) TArray<UMutator*> GetMutators(UMutator* mutatorClass) { return TArray<UMutator*>(); };
 	
-	/*
 	//UFUNCTION(BlueprintCallable) void Recieve_SetupPLS(AProceduralSetup* pls);
 	//UFUNCTION(BlueprintCallable) bool IsSingleMission();
 	//UFUNCTION(BlueprintCallable) bool IsLocked(AFSDPlayerController* Player);
 	//UFUNCTION(BlueprintCallable) bool IsDeepDive();
 	//UFUNCTION(BlueprintCallable) AProceduralSetup* GetPLS();
 	//UFUNCTION(BlueprintCallable) float GetMissionScale();
-	//UFUNCTION(BlueprintCallable) UMissionDNA* GetMissionDNA();
+	UFUNCTION(BlueprintCallable) UMissionDNA* GetMissionDNA() { return NULL; };
 	//UFUNCTION(BlueprintCallable) AProceduralSetup* CreatePLS(int32_t Seed);
 	//UFUNCTION(BlueprintCallable) bool AreMissionsEqual(UGeneratedMission* Other);
-	*/
 };

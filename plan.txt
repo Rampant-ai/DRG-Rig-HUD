@@ -4,9 +4,9 @@ TODO LIST:
 MISSIONS
 --------
 
-show mission length/complexity
-
 add white marker icon for "active assignment mission"
+
+single warning with no anomalies -- put icon on right and leave left blank
 
 is there a thicker mission "hex outline" icon?
 
