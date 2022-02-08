@@ -4,11 +4,9 @@ TODO LIST:
 MISSIONS
 --------
 
-add white marker icon for "active assignment mission"
+highlight if/when one of the displayed missions is selected by the host
 
-single warning with no anomalies -- put icon on right and leave left blank
-
-is there a thicker mission "hex outline" icon?
+show "assignment mission" icon on missions for any connected client
 
 ----------
 DAILY DEAL
@@ -19,3 +17,9 @@ show current "daily deal" for resources
 hide if already purchased
 
 include countdown timer (midnight UTC)
+
+-----------------
+DEEP DIVE SUMMARY
+-----------------
+
+mission sequence preview for both deep dives
